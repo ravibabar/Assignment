@@ -23,5 +23,19 @@ public class MixUnitsPromotionsTest {
 
 		Assert.assertEquals(30.0, promoEngine.calculateDiscount());
 	}
+	
+	@Test
+	public void testPromotionForMixUnits1() {
+		MixUnitsPromotion promoEngine = new MixUnitsPromotion(1,0);
+
+		Assert.assertEquals(20.0, promoEngine.calculateDiscount());
+	}
+	
+	@Test
+	public void testPromotionForMixUnits2() {
+		MixUnitsPromotion promoEngine = new MixUnitsPromotion(0,1);
+
+		Assert.assertEquals(15.0, promoEngine.calculateDiscount());
+	}
 
 }
