@@ -2,11 +2,11 @@ package com.promos.discounts;
 
 public class MixUnitsPromotion implements Promotion {
 
-	char unit1;
+	double unit1;
 	double price;
-	char unit2;
+	double unit2;
 
-	public MixUnitsPromotion(char unit1, char unit2) {
+	public MixUnitsPromotion(double unit1, double unit2) {
 		this.unit1 = unit1;
 		this.unit2 = unit2;
         this.price=UnitsPricesHelper.getPriceForMixedUnits();
@@ -19,9 +19,9 @@ public class MixUnitsPromotion implements Promotion {
 		double dis = 0;
 		double totPrice = 0;
 
-		int min = 0;
-		int max = 0;
-		int remn = 0;
+		double min = 0;
+		double max = 0;
+		double remn = 0;
 
 		if (unit1 > unit2) {
 			min = unit2;
@@ -29,7 +29,7 @@ public class MixUnitsPromotion implements Promotion {
 
 			remn = max - min;
 			totPrice = remn
-					* UnitsPricesHelper.getPrice(new Character(unit1))
+					* UnitsPricesHelper.getPrice(new Character('C'))  // needs to remove hardcoding
 							.intValue();
 
 		} else {
@@ -38,15 +38,15 @@ public class MixUnitsPromotion implements Promotion {
 
 			remn = max - min;
 			totPrice = remn
-					* UnitsPricesHelper.getPrice(new Character(unit2))
+					* UnitsPricesHelper.getPrice(new Character('D')) // needs to remove hardcoding
 							.intValue();
 		}
 
 		totPrice += min * price;
 
 		// for future purpose
-		dis = ((UnitsPricesHelper.getPrice(new Character(unit1)).intValue() * unit1) + (UnitsPricesHelper
-				.getPrice(new Character(unit2)).intValue() * unit2)) - totPrice;
+		dis = ((UnitsPricesHelper.getPrice(new Character('C')).intValue() * unit1) + (UnitsPricesHelper
+				.getPrice(new Character('D')).intValue() * unit2)) - totPrice;
 
 		return totPrice;
 
