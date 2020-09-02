@@ -14,18 +14,24 @@ public class PromotionEngine {
 			
 			char c = entry.getKey();
 			int  v = entry.getValue();
-			p = new MultipleUnitsPromotion(c, v); // needs to change to have loose coupling 
-			totPrice += p.calculateDiscount();
-
-			/*
-			 * switch(c){
-			 * 
-			 * case 'A':
-			 * 
-			 * case 'B':
-			 * 
-			 * }
-			 */
+			
+            int cValue=0;
+			
+			  switch(c){
+			  
+			  case 'A':   p = new MultipleUnitsPromotion(c, v); // needs to change to have loose coupling 
+				          totPrice += p.calculateDiscount();
+			              break;
+			  case 'B':   p = new MultipleUnitsPromotion(c, v); // needs to change to have loose coupling 
+	          				totPrice += p.calculateDiscount();
+	          				break;
+			  case 'C':   cValue=v;
+			  
+			  case 'D' : p= new MixUnitsPromotion(cValue, v);
+			             totPrice += p.calculateDiscount();
+			  
+			  }
+			 
 		}
 
 		return totPrice;
