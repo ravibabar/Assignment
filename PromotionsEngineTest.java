@@ -36,5 +36,24 @@ public class PromotionsEngineTest {
 
 		Assert.assertEquals(80.0, promotionEngine.getTotalPrice(hs));
 	}
+	
+	
+	@Test
+	public void testPromotionForMultipleUnitsForTwoUnits3() {
+
+		// scenario 1
+		// 1 * A
+		// 1 * B
+		// 1 * C
+		// 1 * D
+
+		HashMap<Character, Integer> hs = new HashMap<Character, Integer>();
+		hs.put('A', 1);
+		hs.put('B', 1);
+		hs.put('C', 1);
+		hs.put('D', 1);
+
+		Assert.assertEquals(110.0, promotionEngine.getTotalPrice(hs));
+	}
 
 }
