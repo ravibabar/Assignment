@@ -11,27 +11,39 @@ public class PromotionEngine {
 		Promotion p = null;
 
 		for (Map.Entry<Character, Integer> entry : hs.entrySet()) {
-			
+
 			char c = entry.getKey();
-			int  v = entry.getValue();
-			
-            int cValue=0;
-			
-			  switch(c){
-			  
-			  case 'A':   p = new MultipleUnitsPromotion(c, v); // needs to change to have loose coupling 
-				          totPrice += p.calculateDiscount();
-			              break;
-			  case 'B':   p = new MultipleUnitsPromotion(c, v); // needs to change to have loose coupling 
-	          				totPrice += p.calculateDiscount();
-	          				break;
-			  case 'C':   cValue=v;
-			  
-			  case 'D' : p= new MixUnitsPromotion(cValue, v);
-			             totPrice += p.calculateDiscount();
-			  
-			  }
-			 
+			int v = entry.getValue();
+
+			int cValue = 0;
+
+			switch (c) {
+
+			case 'A':
+				p = new MultipleUnitsPromotion(c, v); // needs to change to have
+														// loose coupling
+				totPrice += p.calculateDiscount();
+				break;
+			case 'B':
+				p = new MultipleUnitsPromotion(c, v); // needs to change to have
+														// loose coupling
+				totPrice += p.calculateDiscount();
+				break;
+			case 'C':
+				cValue = v;
+				if(!hs.containsKey('D')){
+					p = new MixUnitsPromotion(cValue, v);
+					totPrice += p.calculateDiscount();
+					break;
+
+				}
+
+			case 'D':
+				p = new MixUnitsPromotion(cValue, v);
+				totPrice += p.calculateDiscount();
+
+			}
+
 		}
 
 		return totPrice;
