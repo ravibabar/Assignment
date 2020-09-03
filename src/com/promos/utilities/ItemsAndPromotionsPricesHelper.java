@@ -29,7 +29,7 @@ public class ItemsAndPromotionsPricesHelper {
 		return noOfUnits;
 	}
 
-	public static Double getPriceForNoOfUnits(Character ch) {
+	public static Double getPriceForGrp(Character ch) {
 		Double noOfUnits = 0.0;
 		if (ch == 'A') {
 			noOfUnits = PricesForGroup.A.getValue();

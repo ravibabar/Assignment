@@ -14,12 +14,14 @@ public class PromotionEngine {
 		double totPrice = 0.0;
 		Promotion p = null;
 
+		int cValue = 0;
+		boolean flag=false;
+		
 		for (Map.Entry<Character, Integer> entry : hs.entrySet()) {
 
 			char c = entry.getKey();
 			int v = entry.getValue();
-
-			int cValue = 0;
+			
 
 			switch (c) {
 
@@ -34,17 +36,27 @@ public class PromotionEngine {
 				totPrice += p.calculateDiscount();
 				break;
 			case 'C':
-				cValue = v;
+				if(flag) break;
 				if(!hs.containsKey('D')){
-					p = new TwoItemsPromotion(c, v);
+					p = new MultipleItemsPromotion(c, v);
 					totPrice += p.calculateDiscount();
+				}else{
+					p = new TwoItemsPromotion(v, hs.get('D'));
+					totPrice += p.calculateDiscount();
+					flag=true;
 				}
 				break;
 
-			case 'D':
-				p = new TwoItemsPromotion(cValue, v);
+			case 'D':if(flag) break;
+				if(!hs.containsKey('C')){
+				p = new MultipleItemsPromotion(c, v);
 				totPrice += p.calculateDiscount();
-
+				}else{
+					p = new TwoItemsPromotion(v, hs.get('C'));
+					totPrice += p.calculateDiscount();
+					flag=true;
+				}
+				
 			}
 
 		}

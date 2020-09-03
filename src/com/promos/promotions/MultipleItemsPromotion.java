@@ -15,7 +15,7 @@ public class MultipleItemsPromotion implements Promotion {
 		this.items = items;
 		this.price = ItemsAndPromotionsPricesHelper.getPrice(new Character(unit)).intValue();
 		this.noOfUnits = ItemsAndPromotionsPricesHelper.getnoOfUnitsForUnits(unit);
-		this.groupPrice = ItemsAndPromotionsPricesHelper.getPriceForNoOfUnits(unit);
+		this.groupPrice = ItemsAndPromotionsPricesHelper.getPriceForGrp(unit);
 	}
 
 	@Override
