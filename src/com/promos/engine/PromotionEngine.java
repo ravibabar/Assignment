@@ -42,7 +42,7 @@ public class PromotionEngine {
 				break;
 
 			case 'D':
-				p = new TwoItemsPromotion(c, v);
+				p = new TwoItemsPromotion(cValue, v);
 				totPrice += p.calculateDiscount();
 
 			}

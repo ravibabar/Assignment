@@ -22,15 +22,18 @@ public class MultipleItemsPromotion implements Promotion {
 	public double calculateDiscount() {
 		double dis = 0;
 		double totPrice = 0;
+		int rem = 0;
 
-		int rem = items % noOfUnits;
-		totPrice = price * rem;
-		totPrice += (items / noOfUnits) * groupPrice;
-
-		// calculated for future purpose if required to check promotion
-		// based on discount
-		dis = (items * price) - totPrice;
-
+		if (noOfUnits != 0) {
+			rem = items % noOfUnits;
+			totPrice = price * rem;
+			totPrice += (items / noOfUnits) * groupPrice;
+			// calculated for future purpose if required to check promotion
+			// based on discount
+			dis = (items * price) - totPrice;
+		} else {
+			totPrice = price;
+		}
 		return totPrice;
 
 	}
