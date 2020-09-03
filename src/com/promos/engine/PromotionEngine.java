@@ -3,9 +3,9 @@ package com.promos.engine;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.promos.MultipleItemsPromotion;
-import com.promos.Promotion;
-import com.promos.TwoItemsPromotion;
+import com.promos.promotions.MultipleItemsPromotion;
+import com.promos.promotions.Promotion;
+import com.promos.promotions.TwoItemsPromotion;
 
 public class PromotionEngine {
 

@@ -3,8 +3,6 @@ package com.promos.promotions;
 
 import org.junit.Test;
 
-import com.promos.MultipleItemsPromotion;
-
 
 import junit.framework.Assert;
 

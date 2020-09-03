@@ -3,7 +3,6 @@ package com.promos.promotions;
 
 import org.junit.Test;
 
-import com.promos.TwoItemsPromotion;
 
 import junit.framework.Assert;
 
