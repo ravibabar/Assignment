@@ -26,7 +26,7 @@ public class PromotionsEngineTest {
 	@Test
 	public void testPromotionForMultipleUnitsForTwoUnits2() {
 
-		// scenario 1
+		// scenario 2
 		// 1 * A
 		// 1 * B
 
@@ -41,7 +41,7 @@ public class PromotionsEngineTest {
 	@Test
 	public void testPromotionForMultipleUnitsForManyUnits() {
 
-		// scenario 1
+		// scenario 3
 		// 1 * A
 		// 1 * B
 		// 1 * C
@@ -59,7 +59,7 @@ public class PromotionsEngineTest {
 	@Test
 	public void testPromotionForMultipleUnitsForManyUnits2() {
 
-		// scenario 1
+		// scenario 4
 		// 1 * A
 		// 1 * B
 		// 1 * C

@@ -36,14 +36,13 @@ public class PromotionEngine {
 			case 'C':
 				cValue = v;
 				if(!hs.containsKey('D')){
-					p = new TwoItemsPromotion(cValue, v);
+					p = new TwoItemsPromotion(c, v);
 					totPrice += p.calculateDiscount();
 				}
-				System.out.println("hi "+totPrice);
 				break;
 
 			case 'D':
-				p = new TwoItemsPromotion(cValue, v);
+				p = new TwoItemsPromotion(c, v);
 				totPrice += p.calculateDiscount();
 
 			}
