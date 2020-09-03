@@ -87,6 +87,41 @@ public class PromotionsEngineTest {
 	}
 	
 	
+	@Test
+	public void testPromotionForMultipleUnitsForManyUnits3() {
+
+		// scenario 6
+		// 3 * A
+		// 5 * B
+		// 1 * C
+		// 1 * D
+
+		HashMap<Character, Integer> hs = new HashMap<Character, Integer>();
+		hs.put('A', 3);
+		hs.put('B', 5);
+		hs.put('C', 1);
+		hs.put('D', 1);
+
+		Assert.assertEquals(280.0, promotionEngine.getTotalPrice(hs));
+	}
+	
+	@Test
+	public void testPromotionForMultipleUnitsForManyUnits4() {
+
+		// scenario 6
+		// 3 * A
+		// 5 * B
+		// 1 * C
+		// 1 * D
+
+		HashMap<Character, Integer> hs = new HashMap<Character, Integer>();
+		hs.put('A', 5);
+		hs.put('B', 5);
+		hs.put('C', 1);
+
+		Assert.assertEquals(370.0, promotionEngine.getTotalPrice(hs));
+	}
+	
 	
 	
 
